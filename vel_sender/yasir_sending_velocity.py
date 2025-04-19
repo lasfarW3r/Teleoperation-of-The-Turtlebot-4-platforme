@@ -13,7 +13,7 @@ class TeleopLidarCamera(Node):
         super().__init__('teleop_lidar_camera')
 
         # ROS 2 Publishers & Subscribers
-        self.vel_publisher = self.create_publisher(Twist, 'turtle1/cmd_vel', 10)
+        self.vel_publisher = self.create_publisher(Twist, 'robot2/cmd_vel', 10)
         self.joy_subscription = self.create_subscription(Joy, '/joy', self.joy_callback, 10)
         self.laser_subscription = self.create_subscription(LaserScan, 'robot2/scan', self.laser_callback, 10)
 
